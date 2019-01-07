@@ -10,6 +10,7 @@
   alipayURL="https://qr.alipay.com/fkx09187wkk8yyzqoxa7na1?t=1546835806988";//从支付宝收款二维码里得到的URL
   wechat = "MicroMessenger";
   alipay = "AlipayClient";
+  qqBrowser = "MQQBrowser"
   userAgent = getUA();
   if(userAgent.indexOf(wechat)!=-1){
    //微信
@@ -17,6 +18,9 @@
   }else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
    window.location.href=alipayURL;
+   }else if(userAgent.indexOf(qqBrowser)!=-1){
+   //QQ
+   window.location.href="static/qq.png"
   }else{
    //不是支付宝或微信中的一个
    alert("无法识别的客户端！请在微信或支付宝内打开！");
