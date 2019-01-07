@@ -1,54 +1,38 @@
-<!DOCTYPE html>
 <html>
  <head>
-  <meta charset="UTF-8">
-  <title id="title">转账跳转中,请稍等</title>
+  <title id="title">转账跳转中......</title>
  </head>
  <body>
   <script>
   function getUA(){
    return navigator.userAgent;
   }
-  alipayURL="https://qr.alipay.com/fkx09187wkk8yyzqoxa7na1?t=1546835806988";
+  alipayURL="HTTPS://QR.ALIPAY.COM/FKX00576LNYX64NDCHUH7A";//从支付宝收款二维码里得到的URL
   wechat = "MicroMessenger";
   alipay = "AlipayClient";
-  qqBrowser = "MQQBrowser"
   userAgent = getUA();
-  //是否使用 QQ 或 TIM 收款开关
-  qqSwitch = ture;
-  timSwitch = false;
-  if (userAgent.indexOf(wechat) != -1){
+  if(userAgent.indexOf(wechat)!=-1){
    //微信
    window.location.href="static/wechat.png"
-  }else if (userAgent.indexOf(alipay) != -1){
+  }else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
-   //(还是支付宝最友好)
    window.location.href=alipayURL;
-  }else if (userAgent.indexOf(qqBrowser) != -1){
-    //QQ或TIM
-    //考,QQ和TIM收款码居然不通用?
-    if (timSwitch && userAgent.indexOf("TIM") != -1){
-      //TIM 
-      window.location.href="static/tim.png"
-    }else if (qqSwitch){
-      //QQ
-      window.location.href="static/qq.png"
-    }
   }else{
-   alert("无法识别的客户端！");
+   //不是支付宝或微信中的一个
+   alert("无法识别的客户端！请在微信或支付宝内打开！");
   }
 </script>
   <div id="container">
-   <h1>请用支付宝，微信或QQ访问</h1>
-   <h3>以下为你的浏览器信息</h3>
+   <h1>详细信息</h1>
+   <h3>如果遇到了问题，请将此页面截屏发送给开发者</h3>
+   <p>邮箱:senventise@gmail.com</p>
    <div id="ua"><p>UA:</p></div> 
    <duv id="link"><p>URL:</p></div>
-    <p>联系邮箱:bcgeek@qq.com</p>
-   <p>版本:1.0</p>
+   <p>版本:2.1</p>
    <script>
-    document.getElementById("link").innerHTML = ("URL:"+ window.location.href);
-    document.getElementById("ua").innerHTML = ("UA:" + navigator.userAgent);
-    document.getElementById("title").innerHTML = "北辰冰仔-支付";
+    document.getElementById("link").innerHTML = "URL:"+ window.location.href
+    document.getElementById("ua").innerHTML=("UA:"+navigator.userAgent);
+    document.getElementById("title").innerHTML="错误！";
    </script>
   </div>
  </body>
