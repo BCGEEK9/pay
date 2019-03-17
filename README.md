@@ -1,2 +1,2 @@
 # 个人收款二维码
-访问地址https://bcgeek9.github.io/pay/
+使用即表示同意用户协议
