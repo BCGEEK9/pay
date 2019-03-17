@@ -23,7 +23,7 @@
    window.location.href="static/qq.png"
   }else{
    //不是支付宝或微信中的一个
-   alert("无法识别的客户端！是否跳转至支付宝");
+   alert("无法识别的客户端！将自行选择支付方式");
   }
 </script>
   <div id="container">
@@ -31,7 +31,7 @@
    <h3>以下为访问标识</h3>
    <div id="ua"><p>UA:</p></div> 
    <duv id="link"><p>URL:</p></div>
-   <p>点击跳转支付宝:https://qr.alipay.com/fkx09187wkk8yyzqoxa7na1?t=1546835806988</p>
+   <input  type="button" value="选择支付宝"  onclick="window.location.href="https://qr.alipay.com/fkx09187wkk8yyzqoxa7na1?t=1546835806988}">
    <p>版本:1.3</p>
    <script>
     document.getElementById("link").innerHTML = "URL:"+ window.location.href
